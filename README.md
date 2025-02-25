@@ -110,9 +110,12 @@ graph TB
         O[Django 백엔드]
         O2[Spring MVC 백엔드]
         P[HTML5/JS 프론트엔드]
-        Q[대시보드 위젯]
+        T[경기 일정]
+        U[팀/개인 순위]
+        S[구단 증권 정보]
+        V[뉴스 게시판]
+        W[스타디움의 별들]
         R[응원게시판]
-        S[Highcharts 주가 정보]
     end
 
     A -->|날씨 데이터 수집| E
@@ -144,9 +147,13 @@ graph TB
 
     O --> P
     O2 --> P
-    P --> Q
-    P --> R
+    P --> T
+    P --> U
     P --> S
+    P --> V
+    P --> W
+    P --> R
+
 
 ```
 
