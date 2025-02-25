@@ -1,0 +1,357 @@
+[
+  {
+    "id": "구단",
+    "parent": "",
+    "name": "이번주의 핫한 선수"
+  },
+  {
+    "id": "KIA",
+    "parent": "구단",
+    "name": "KIA"
+  },
+  {
+    "id": "최형우",
+    "parent": "KIA",
+    "name": "최형우",
+    "value": 300
+  },
+  {
+    "id": "김도영",
+    "parent": "KIA",
+    "name": "김도영",
+    "value": 299
+  },
+  {
+    "id": "양현종",
+    "parent": "KIA",
+    "name": "양현종",
+    "value": 212
+  },
+  {
+    "id": "이범호",
+    "parent": "KIA",
+    "name": "이범호",
+    "value": 165
+  },
+  {
+    "id": "최원준",
+    "parent": "KIA",
+    "name": "최원준",
+    "value": 129
+  },
+  {
+    "id": "NC",
+    "parent": "구단",
+    "name": "NC"
+  },
+  {
+    "id": "데이비슨",
+    "parent": "NC",
+    "name": "데이비슨",
+    "value": 214
+  },
+  {
+    "id": "손아섭",
+    "parent": "NC",
+    "name": "손아섭",
+    "value": 198
+  },
+  {
+    "id": "김주원",
+    "parent": "NC",
+    "name": "김주원",
+    "value": 190
+  },
+  {
+    "id": "박민우",
+    "parent": "NC",
+    "name": "박민우",
+    "value": 175
+  },
+  {
+    "id": "김형준",
+    "parent": "NC",
+    "name": "김형준",
+    "value": 150
+  },
+  {
+    "id": "삼성",
+    "parent": "구단",
+    "name": "삼성"
+  },
+  {
+    "id": "김영웅",
+    "parent": "삼성",
+    "name": "김영웅",
+    "value": 449
+  },
+  {
+    "id": "원태인",
+    "parent": "삼성",
+    "name": "원태인",
+    "value": 313
+  },
+  {
+    "id": "이승현",
+    "parent": "삼성",
+    "name": "이승현",
+    "value": 200
+  },
+  {
+    "id": "김헌곤",
+    "parent": "삼성",
+    "name": "김헌곤",
+    "value": 189
+  },
+  {
+    "id": "박진만",
+    "parent": "삼성",
+    "name": "박진만",
+    "value": 166
+  },
+  {
+    "id": "LG",
+    "parent": "구단",
+    "name": "LG"
+  },
+  {
+    "id": "김범석",
+    "parent": "LG",
+    "name": "김범석",
+    "value": 530
+  },
+  {
+    "id": "박동원",
+    "parent": "LG",
+    "name": "박동원",
+    "value": 351
+  },
+  {
+    "id": "엔스",
+    "parent": "LG",
+    "name": "엔스",
+    "value": 231
+  },
+  {
+    "id": "오지환",
+    "parent": "LG",
+    "name": "오지환",
+    "value": 196
+  },
+  {
+    "id": "염경엽",
+    "parent": "LG",
+    "name": "염경엽",
+    "value": 182
+  },
+  {
+    "id": "SSG",
+    "parent": "구단",
+    "name": "SSG"
+  },
+  {
+    "id": "최정",
+    "parent": "SSG",
+    "name": "최정",
+    "value": 329
+  },
+  {
+    "id": "앤더슨",
+    "parent": "SSG",
+    "name": "앤더슨",
+    "value": 268
+  },
+  {
+    "id": "김광현",
+    "parent": "SSG",
+    "name": "김광현",
+    "value": 233
+  },
+  {
+    "id": "박성한",
+    "parent": "SSG",
+    "name": "박성한",
+    "value": 207
+  },
+  {
+    "id": "이숭용",
+    "parent": "SSG",
+    "name": "이숭용",
+    "value": 163
+  },
+  {
+    "id": "두산",
+    "parent": "구단",
+    "name": "두산"
+  },
+  {
+    "id": "라모스",
+    "parent": "두산",
+    "name": "라모스",
+    "value": 313
+  },
+  {
+    "id": "곽빈",
+    "parent": "두산",
+    "name": "곽빈",
+    "value": 302
+  },
+  {
+    "id": "허경민",
+    "parent": "두산",
+    "name": "허경민",
+    "value": 270
+  },
+  {
+    "id": "이승엽",
+    "parent": "두산",
+    "name": "이승엽",
+    "value": 190
+  },
+  {
+    "id": "강승호",
+    "parent": "두산",
+    "name": "강승호",
+    "value": 183
+  },
+  {
+    "id": "KT",
+    "parent": "구단",
+    "name": "KT"
+  },
+  {
+    "id": "강백호",
+    "parent": "KT",
+    "name": "강백호",
+    "value": 390
+  },
+  {
+    "id": "김민",
+    "parent": "KT",
+    "name": "김민",
+    "value": 309
+  },
+  {
+    "id": "벤자민",
+    "parent": "KT",
+    "name": "벤자민",
+    "value": 234
+  },
+  {
+    "id": "천성호",
+    "parent": "KT",
+    "name": "천성호",
+    "value": 178
+  },
+  {
+    "id": "신본기",
+    "parent": "KT",
+    "name": "신본기",
+    "value": 140
+  },
+  {
+    "id": "키움",
+    "parent": "구단",
+    "name": "키움"
+  },
+  {
+    "id": "이주형",
+    "parent": "키움",
+    "name": "이주형",
+    "value": 384
+  },
+  {
+    "id": "고영우",
+    "parent": "키움",
+    "name": "고영우",
+    "value": 152
+  },
+  {
+    "id": "이용규",
+    "parent": "키움",
+    "name": "이용규",
+    "value": 115
+  },
+  {
+    "id": "김재현",
+    "parent": "키움",
+    "name": "김재현",
+    "value": 80
+  },
+  {
+    "id": "도슨",
+    "parent": "키움",
+    "name": "도슨",
+    "value": 79
+  },
+  {
+    "id": "한화",
+    "parent": "구단",
+    "name": "한화"
+  },
+  {
+    "id": "류현진",
+    "parent": "한화",
+    "name": "류현진",
+    "value": 740
+  },
+  {
+    "id": "페라자",
+    "parent": "한화",
+    "name": "페라자",
+    "value": 207
+  },
+  {
+    "id": "정은원",
+    "parent": "한화",
+    "name": "정은원",
+    "value": 152
+  },
+  {
+    "id": "황준서",
+    "parent": "한화",
+    "name": "황준서",
+    "value": 140
+  },
+  {
+    "id": "최재훈",
+    "parent": "한화",
+    "name": "최재훈",
+    "value": 110
+  },
+  {
+    "id": "롯데",
+    "parent": "구단",
+    "name": "롯데"
+  },
+  {
+    "id": "반즈",
+    "parent": "롯데",
+    "name": "반즈",
+    "value": 221
+  },
+  {
+    "id": "이주찬",
+    "parent": "롯데",
+    "name": "이주찬",
+    "value": 220
+  },
+  {
+    "id": "전준우",
+    "parent": "롯데",
+    "name": "전준우",
+    "value": 210
+  },
+  {
+    "id": "한동희",
+    "parent": "롯데",
+    "name": "한동희",
+    "value": 200
+  },
+  {
+    "id": "고승민",
+    "parent": "롯데",
+    "name": "고승민",
+    "value": 200
+  }
+]
