@@ -219,8 +219,7 @@ graph TB
 
 ---
 
-## 📜 Copyright & License  
-© 2025 Bae-Sunny. All rights reserved.  
-This project is licensed under the MIT License.  
-See the [LICENSE](./LICENSE) file for details.
+## 📜 Copyright  
+© 2024 Bae-Sunny. All rights reserved.
+
 
