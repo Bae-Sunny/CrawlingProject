@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<insert id="addBoard" parameterType="bvo">
+		<!-- NUM, TITLE, CONTENT, WRITER,HIT,RDATE,CNT -->
+		insert into cheerboard
+		values(cheerboard_seq.nextVal,#{favteam},#{title},#{content},#{writer},0,sysdate,#{cnt})
+	</insert>
+
+	<select id="listBoardBack" resultType="bvo">
+		select * from cheerboard
+		order
+		by 1 desc
+	</select>
+
+	<select id="listboard" resultType="bvo" parameterType="map">
+		SELECT num, favteam, title, content, writer, hit, rdate, row_num, cnt
+		FROM (
+		SELECT
+		b.num, b.favteam, b.title, b.content, b.writer, b.hit, b.rdate,
+		ROW_NUMBER() OVER (ORDER BY b.num DESC) AS row_num,
+		COUNT(bc.ucode) AS cnt
+		FROM
+		cheerboard b
+		LEFT JOIN cheerboard_comm bc ON b.num = bc.ucode
+		<where>
+			<if test="searchValue != null and searchType != null">
+				<choose>
+					<when test="searchType == 1">
+						AND title LIKE '%' || #{searchValue} || '%'
+					</when>
+					<when test="searchType == 2">
+						AND writer LIKE '%' || #{searchValue} || '%'
+					</when>
+					<when test="searchType == 3">
+						AND content LIKE '%' || #{searchValue} || '%'
+					</when>
+				</choose>
+			</if>
+		</where>
+		GROUP BY b.num, b.favteam, b.title, b.content, b.writer, b.hit,
+		b.rdate
+		) numbered_rows
+		WHERE row_num BETWEEN #{begin} AND #{end}
+	</select>
+
+
+	<select id="totalCount" resultType="int" parameterType="map">
+		select count(*) cnt from cheerboard
+		<if test="searchValue != null and searchType != null">
+			<where>
+				<choose>
+					<when test="searchType ==1">
+						title like '%'|| #{searchValue} ||'%'
+					</when>
+					<when test="searchType ==2">
+						writer like '%'|| #{searchValue} ||'%'
+					</when>
+					<when test="searchType ==3">
+						content like '%'|| #{searchValue} ||'%'
+					</when>
+				</choose>
+			</where>
+		</if>
+	</select>
+
+	<!-- up -->
+	<update id="up" parameterType="bvo">
+		update cheerboard set
+		favteam =
+		#{favteam},
+		title = #{title},
+		content = #{content},
+		writer = #{writer}
+		where num=#{num}
+	</update>
+	<!-- del -->
+	<delete id="del" parameterType="int">
+		delete from cheerboard where
+		num=#{num}
+	</delete>
+
+	<!-- hit -->
+	<update id="hit" parameterType="int">
+		update cheerboard set hit=hit+1
+		where num=#{num}
+	</update>
+
+	<!-- detail -->
+	<select id="detail" parameterType="int" resultType="bvo">
+		select * from
+		cheerboard where num=#{num}
+	</select>
+
+
+	<!-- 댓글 -->
+	<!-- <insert id="addComm" parameterType="bcommvo"> insert into cheerboard_comm 
+		(num, ucode, uwriter, ucontent, uregdate) values (cheerboard_comm_seq.nextVal, 
+		#{ucode}, #{uwriter}, #{ucontent}, sysdate) </insert> -->
+	<insert id="addComm" parameterType="bcommvo">
+		<!-- 댓글 번호를 계산하기 위해 해당 ucode에 대한 최대 num을 조회하고, 1을 더함 -->
+		<selectKey keyProperty="num" resultType="int" order="BEFORE">
+			SELECT
+			COALESCE(MAX(num), 0) + 1 FROM cheerboard_comm WHERE ucode =
+			#{ucode}
+		</selectKey>
+		INSERT INTO cheerboard_comm
+		(num, ucode, uwriter, ucontent, uregdate)
+		VALUES (#{num}, #{ucode}, #{uwriter}, #{ucontent}, SYSDATE)
+	</insert>
+
+	<select id="listComm" resultType="bcommvo" parameterType="int">
+		select
+		num, ucode, uwriter, ucontent, TO_CHAR(uregdate,'YYYY-MM-DD') as
+		uregdate from cheerboard_comm
+		where ucode=#{ucode} order by 1 desc
+	</select>
+
+</mapper>
+
+
+

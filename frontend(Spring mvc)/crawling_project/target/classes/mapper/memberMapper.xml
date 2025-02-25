@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<insert id="add" parameterType="mvo">
+		insert into member_baseball( num,
+		id, pwd, name, email, tel, grade,rdate, gender,
+		favteam)
+		values(member_baseball_seq.nextval,#{id},#{pwd},#{name},#{email},
+		#{tel},#{grade,jdbcType=VARCHAR,javaType=java.lang.String},
+		sysdate,#{gender},#{favteam})
+	</insert>
+	<insert id="add_20240410" parameterType="mvo">
+		insert into
+		member_baseball( num, id, pwd, name, email, tel, grade, rdate,
+		favteam)
+		values(member_baseball_seq.nextval, #{id}, #{pwd}, #{name},
+		#{email}, #{tel}, #{grade}, sysdate,
+		#{favteam})
+	</insert>
+
+	<select id="list" resultType="mvo">
+		select num, id, pwd, name, email,
+		tel, grade, TO_CHAR(rdate,'YYYY-MM-DD') as rdate,favteam
+		from
+		member_baseball
+		order by 1 desc
+	</select>
+
+	<select id="detail" parameterType="int" resultType="mvo">
+		select num,
+		id, pwd, name, email, tel, grade, TO_CHAR(rdate,'YYYY-MM-DD') as
+		rdate, favteam, gender
+		from member_baseball
+		where num = #{num}
+	</select>
+
+	<update id="upd" parameterType="mvo">
+		update member_baseball
+		set
+		name=#{name}, 
+		email=#{email},
+		tel=#{tel},
+		favteam=#{favteam}
+		where num = #{num}
+	</update>
+
+	<delete id="del" parameterType="int">
+		delete
+		from member_baseball
+		where
+		num = #{num}
+	</delete>
+
+	<select id="chkId" parameterType="String" resultType="int">
+		SELECT
+		count(*) as cnt
+		from member_baseball
+		where id = #{id}
+	</select>
+
+	<select id="chkPwd" parameterType="mvo" resultType="int">
+		SELECT
+		count(*) as cnt
+		from member_baseball
+		where id = #{id}
+		and pwd = #{pwd}
+	</select>
+	<!-- 로그인처리 -->
+	<select id="mypage" parameterType="mvo" resultType="mvo">
+		SELECT num,
+		id, pwd, name, email, tel, TO_CHAR(rdate,'YYYY-MM-DD') as rdate,
+		gender
+		from member_baseball
+		where id = #{id}
+		and pwd = #{pwd}
+	</select>
+
+	<select id="memberDetail" parameterType="String"
+		resultType="mvo">
+		SELECT num, id, pwd, name, email, tel, grade,
+		TO_CHAR(rdate,'YYYY-MM-DD') as
+		rdate, favteam, gender
+		FROM
+		member_baseball
+		WHERE id = #{id}
+	</select>
+
+	<select id="totalCount" resultType="int">
+		select count(*) AS cnt
+		from
+		member
+	</select>
+
+	<insert id="logger_in" parameterType="lvo">
+		insert into loginlog
+		values(loginlog_seq.nextval, #{idn}, #{reip}, #{uagent}, #{status},
+		sysdate)
+	</insert>
+
+	<select id="listChart" resultType="map">
+		SELECT FLOOR(age / 10) * 10 AS
+		age_group, gender,
+		COUNT(*) AS total FROM member_baseball GROUP BY
+		FLOOR(age / 10) * 10, gender
+		ORDER BY age_group, gender
+	</select>
+
+
+</mapper>

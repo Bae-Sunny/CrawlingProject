@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.co.ictedu.mvc.dto.MemberDTO" alias="mvo"/>
+		<typeAlias type="kr.co.ictedu.mvc.dto.LoginLoggerVO" alias="lvo"/>
+		<typeAlias type="kr.co.ictedu.mvc.dto.BoardVO" alias="bvo"/>
+		<typeAlias type="kr.co.ictedu.mvc.dto.BoardCommVO" alias="bcommvo"/>	
+		<typeAlias type="kr.co.ictedu.mvc.dto.NewsVO" alias="nvo"/>	
+	</typeAliases>
+</configuration>  
